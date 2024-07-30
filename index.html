@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            Student Management System
+        </div>
+        
+        <div class="form-container">
+            <form id="studentForm">
+                <input type="hidden" id="studentId">
+                <div class="form-group">
+                    <label for="studentName">Name:</label>
+                    <input type="text" id="studentName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="rollNo">Roll No:</label>
+                    <input type="text" id="rollNo" class="form-control" required pattern="\d{2}[A-Z]{3}\d{3}">
+                </div>
+                <div class="form-group">
+                    <label for="departmentName">Department:</label>
+                    <select id="departmentName" class="form-control" required>
+                        <option value="">Select Department</option>
+                        <option value="CSE">CSE</option>
+                        <option value="IT">IT</option>
+                        <option value="ECE">ECE</option>
+                        <option value="EEE">EEE</option>
+                        <option value="MECH">MECH</option>
+                        <option value="CIVIL">CIVIL</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="section">Section:</label>
+                    <select id="section" class="form-control" required>
+                        <option value="">Select Section</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cgpa">CGPA:</label>
+                    <input type="number" id="cgpa" class="form-control" step="0.01" min="0" max="10" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" class="form-control" required pattern=".+@kongu\.edu">
+                </div>
+                <div class="form-group">
+                    <label for="contactNumber">Contact Number:</label>
+                    <input type="text" id="contactNumber" class="form-control" required pattern="[6-9][0-9]{9}">
+                </div>
+                <button type="submit" class="btn-submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="table-container">
+            <table id="studentTable" class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll No</th>
+                        <th>Department</th>
+                        <th>Section</th>
+                        <th>CGPA</th>
+                        <th>Email</th>
+                        <th>Contact Number</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be populated dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
